@@ -1,5 +1,5 @@
 # Contendores de Sistemas Gestores de Base de Datos
-![ImagenDocker](./img/doker.png)
+![ImagenDocker](../img/doker.png)
 # Contenedores Docker Description
 | Comandos | Descripcion |
 |:---|:---|
