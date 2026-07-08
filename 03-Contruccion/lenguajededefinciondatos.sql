@@ -138,3 +138,69 @@ INSERT INTO profesor (numero_nomina, nombre, apellido_materno)
 VALUES ('4544655','Ricarda','Sonrics')
 
 -- RESTRICCION UNIQUE
+
+CREATE TABLE categoria(
+	categoria_id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	nombre VARCHAR(20) NOT NULL UNIQUE,
+	activo BIT NOT NULL
+);
+GO
+
+INSERT INTO categoria
+VALUES(UPPER('carnes frias'),1);
+
+INSERT INTO categoria
+VALUES(UPPER('carnes frias'),1);
+
+DROP TABLE categoria
+GO
+
+CREATE TABLE categoria(
+	categoria_id INT NOT NULL IDENTITY(1,1),
+	CONSTRAINT pk_categoria
+	PRIMARY KEY(categoria_id)
+	nombre VARCHAR(20) NOT NULL,
+	CONSTRAINT uq_categoria_nombre
+	UNIQUE, 
+	activo BIT NOT NULL
+);
+GO
+
+DROP TABLE categoria;
+GO
+
+CREATE TABLE categoria(
+	categoria_id INT NOT NULL IDENTITY(1,1),
+	nombre VARCHAR(20) NOT NULL, 
+	activo BIT NOT NULL
+	CONSTRAINT pk_categoria
+	PRIMARY KEY (categoria_id)
+	CONSTRAINT uq_categoria_nombre
+	UNIQUE(nombre)
+);
+GO
+
+-- RESTRICCION DEFAULT
+
+CREATE TABLE categoria(
+	categoria_id INT NOT NULL IDENTITY(1,1),
+	nombre VARCHAR(20) NOT NULL, 
+	activo BIT NOT NULL DEFAULT 1,
+	CONSTRAINT pk_categoria
+	PRIMARY KEY (categoria_id),
+	CONSTRAINT uq_categoria_nombre
+	UNIQUE(nombre)
+);
+GO
+
+INSERT INTO categoria(nombre,activo)
+VALUES('Carnes Frias',DEFAULT);
+
+INSERT INTO categoria(nombre)
+VALUES('Carnes Frias')
+
+SELECT*
+FROM categoria
+
+--TODO: CREAR LAS TABLAS DE LAS OTRAS 2 FORMAS 
+--TODO: CHECK 
