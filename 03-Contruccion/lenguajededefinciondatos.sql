@@ -414,3 +414,6 @@ DELETE FROM provedor
 WHERE provedor_id = 1;
 
 -- TODO: Se debe realizar el ON UPDATE  NO ACTION Y LAS DEMAS INTEGRIDADES REFERENCIALES 
+
+
+
