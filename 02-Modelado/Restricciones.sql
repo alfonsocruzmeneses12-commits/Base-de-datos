@@ -5,7 +5,7 @@ USE BDcontrains;
 Go
 
 CREATE TABLE paciente(
-NumPaciente INT NOT NULL,
+NumPaciente INT NOT git addNULL,
 Nombre VARCHAR(30) NOT NULL,
 Apellido1 VARCHAR(20) NOT NULL,
 Apellido2 VARCHAR(20) NOT NULL,
